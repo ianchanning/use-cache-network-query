@@ -41,7 +41,7 @@ That's it, `useQuery -> useCacheNetworkQuery` and remove `fetchPolicy` option.
 
 Apollo's `useQuery` defaults to only ever checking the cache if it exists. This is via the [`fetchPolicy`](https://www.apollographql.com/docs/react/data/queries#setting-a-fetch-policy) that is 'cache-first'.
 
-In my opinion, if you have a normal size app (tens not hundreds of queries), then dealing with the impact of a `fetchPolicy` of 'cache-only' for a list of items has a massive overhead. You have to:
+In my opinion, if you have a normal size app (tens not hundreds of queries), then dealing with the impact of a `fetchPolicy` of 'cache-first' for a list of items has a massive overhead. You have to:
 
 1. Handle cache from add and delete mutations
 1. Handle any cached queries using variables for add and delete mutations
@@ -81,4 +81,4 @@ This hook returns `loading` true **only if there is no cache**. Then Apollo hand
 
 This problem is perfectly explained in [apollographql/apollo-client #8669](https://github.com/apollographql/apollo-client/issues/8669), with the code for this from a [workaround comment by @puglyfe](https://github.com/apollographql/apollo-client/issues/8669#issuecomment-978012147). The impact of the very simple switch, turns a completely non-reactive app that shows a loading spinner on every page load, to being the reactive app you expect, that loads once and then is instantaneous.
 
-There's practically no code here, but it was such a jaw dropping moment for me to finally see React + Apollo cache working correctly that I wish Apollo did this by default. There is a reasonable explantion in the issue above why they dont, but I think its worth spreading this to get my sanity back for dealing with Apollo caching.
+There's practically no code here, but it was such a jaw dropping moment for me to finally see React + Apollo cache working correctly that I wish Apollo did this by default. There is a reasonable explantion in the issue above why they don't, but I think its worth spreading this to get my sanity back for dealing with Apollo caching.
