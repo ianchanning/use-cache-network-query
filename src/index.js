@@ -1,4 +1,6 @@
-import { useQuery } from "@apollo/client";
+import client from "@apollo/client";
+
+const { useQuery } = client;
 
 /**
  * Magic query that properly uses the cache
