@@ -1,4 +1,4 @@
-import { useQuery, DocumentNode, QueryHookOptions } from "@apollo/client";
+import { useQuery, DocumentNode, QueryHookOptions, QueryResult } from "@apollo/client";
 
 /**
  * Magic query that properly uses the cache
@@ -16,7 +16,7 @@ import { useQuery, DocumentNode, QueryHookOptions } from "@apollo/client";
  * @param {import('@apollo/client').QueryHookOptions} options
  * @returns {import('@apollo/client').QueryResult}
  */
-const useCacheNetworkQuery = (query: DocumentNode, options: QueryHookOptions) => {
+const useCacheNetworkQuery = (query: DocumentNode, options: QueryHookOptions): QueryResult => {
     const result = useQuery(query, {
         ...options,
         fetchPolicy: "cache-and-network",
