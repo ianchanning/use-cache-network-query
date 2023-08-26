@@ -2,9 +2,10 @@
   "name": "use-cache-network-query",
   "version": "1.0.2",
   "description": "Apollo Client useQuery with cache-and-network that only returns loading if no cache",
-  "type": "module",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc -p tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,5 +29,9 @@
   "peerDependencies": {
     "@apollo/client": ">=3.0.0",
     "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.21",
+    "typescript": "^5.2.2"
   }
 }
