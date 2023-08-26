@@ -1,6 +1,6 @@
 {
   "name": "use-cache-network-query",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Apollo Client useQuery with cache-and-network that only returns loading if no cache",
   "type": "module",
   "main": "src/index.js",
